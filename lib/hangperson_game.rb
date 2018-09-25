@@ -23,11 +23,9 @@ class HangpersonGame
 	if @wrong_guesses.length >= 7
 		return :lose
 	end
-	
 	if @word.chars.all? { |char| @guesses.include?(char) }
 		return :win
 	end
-	
 	return :play
   end
 
@@ -48,7 +46,7 @@ class HangpersonGame
   # Checks for a valid letter input, compares to word, than checks if wrong
   # guess has been done before 
   def guess(letter)
-	if letter.to_s.empty? || !letter.match(/^[a-zA-Z]+S/)
+	if letter.to_s.empty? || !letter.match(/^[a-zA-Z]+$/)
 		raise ArgumentError
 	end
 		
